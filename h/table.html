@@ -1,0 +1,196 @@
+<html lang="en">
+<head>
+	<style>
+		body {
+		  margin: 0;
+		  padding: 0;
+		  font-family: verdana, sans-serif;
+		  font-size: 69%;
+		  color: #000;
+		  background-color: #fff;
+		}
+		.light {background-color:#eedd99;}
+		.hard {background-color:#eeeded;}
+		.selectHdr {
+			border-bottom: 4px orange solid
+			; background-color:#228833
+		}
+		.selectTd {
+			  border-left : 2px blue solid
+			; border-right: 2px blue solid
+			; background-image: url(/i/r.png)
+		}
+		select {background-color: white;}
+		
+		table {
+		    overflow: hidden
+		  ; border-collapse: collapse
+		  ; table-layout: fixed
+		  ;
+		}
+		/*
+		tr:hover[id^=tr] { 
+			background-color: white; 
+			border-bottom: 2px purple solid;		  
+			opacity: 0.5;
+			z-index: 99; 
+		}
+		*/
+		td {
+			  font-family: courier
+			; font-size:12px
+			; color:black
+			; width:100px;
+			; border-style: solid
+			; border-width: 1px
+			; border-color: brown
+			; white-space : nowrap
+			}
+		th {
+			  color : white;
+			; border-style: solid
+			; border-width: 2px
+			; border-color: white
+			; background-color: blue
+			; width: 20px
+			; text-align : center
+			; font-size: 14px
+			; white-space : nowrap
+		}
+		td[id^=hdr] {color:white;width:20px;}
+  		td.noselect {
+  			font-size:12px;border-spacing:4px;
+  		    -webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+  		}
+  		td.wrapped {
+  			white-space : pre;
+  		}
+		td[id^=calc] {
+  			font-size:12px;border-spacing:4px;
+  		    -webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		
+		}
+		/*
+		tr:hover{
+			background-color: purple; 
+			border-bottom: 2px green solid;		  
+			z-index: 99; 
+		}
+		*/
+/*
+		}
+		td, th {
+		  position: relative;
+		}
+		td:hover::after,
+		th:hover::after {
+		  content: "";
+		  position: absolute;
+		  background-color: #001;
+		  left: 0;
+		  top: -5000px;
+		  height: 10000px;
+		  width: 100%;
+		  opacity: 0.3;
+		  z-index: -1;
+		}
+		*/
+
+	</style>
+	<!--
+		http://www.w3.org/TR/css3-selectors/#attribute-substrings
+	-->
+</head>
+
+<body>
+	LISTEN channel, a na postgres tablicu trigger to NOTIFY channel on insert or update
+	<div style="width:90%;">
+		<div id="s" style="float:left;background-color:black;color:white;width:70%;opacity:0.9;">
+			<a href="">settings localStorage<a/>
+		</div>
+		
+		<div style="float:right;width:30%;white-space:nowrap;">
+			<div id="dbg_short" style="position:absolute;background-color:brown;color:white;">
+			</div>
+			
+		</div>
+	</div>
+	<div id="o">
+		..
+	</div>
+	<br>
+	<!--div id="set">
+		<input />
+	</div-->
+	
+	
+	<div id="sp" style="float:left;background-color:black;color:white;width:80%;opacity:0.2;">
+		lying that loading...
+	</div>
+	
+	<br>
+	<div id="b">
+		<div>
+			<!--span>
+				v.outlook.highlightRowOnClick: 
+			</span>
+			<span>
+				yes <input type=radio name="highlightRowOnClick" onclick="v.outlook.highlightRowOnClick=true;saveOutlook();">
+				no <input type=radio name="highlightRowOnClick" onclick="v.outlook.highlightRowOnClick=false;saveOutlook();">
+			</span-->
+		</div>
+	</div>
+	
+	
+	<div 
+		style="display:none;width:600px;height:100px;position:absolute;top:30px;left:30px;color:white;z-index:102;background-color:purple;opacity:0.8;" 
+		id="table_menu"
+	>
+		<form>
+			src: <input style="width:300px;" id="v.dataProp.url" onchange="localStorage.setItem('url',this.value);" >	
+			<br>
+			<u onclick="localStorage.setItem('url',this.innerHTML);location.reload();">http://finrep00.odobo.prod:5999/api-1.1?rpName=Xcron&fromCache=0</u>
+			<br>
+			<u onclick="localStorage.setItem('url',window.location.origin + this.innerHTML);location.reload();">/h/short.json</u>
+			<br>
+			<u onclick="localStorage.setItem('url',window.location.origin + this.innerHTML);location.reload();">/c?q=wholeFarm</u>
+			<br>
+		</form>
+	</div>
+	
+	
+	<div id="csv">
+	</div>
+</body>
+
+<script src="table.js">
+
+</script>
+
+<script>
+
+var dumpd = 'Col1,Col2,Col3\nval1,val2,val3';
+
+	csvData = new Blob([dumpd], { type: 'text/csv' }); //new way
+    var csvUrl = URL.createObjectURL(csvData);
+
+    document.getElementById("csv").innerHTML='<a href="'+csvUrl+'" download="ReportName">csv</a>';
+    
+</script>
+
+</html>
+
+
+
+
+

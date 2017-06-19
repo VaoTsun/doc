@@ -1,0 +1,74 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8"> 
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf8">
+		<style>
+			body {background-color:black;color:ada;}
+			tr.nth-child(odd) {color:#b3f;} 
+			tr:nth-child(even) {color: #ae2;} 
+			tr:hover { color: brown;}
+			span {background-color:grey;} 
+			span:hover { color: orange;background-color:black;}
+			.stick {
+ 	  		position: fixed;
+  	  	top: 0;
+				}
+			span.tags {
+				opacity:0.9;background-color:#070700;
+				overflow: auto;
+				overflow-x: hidden;
+				height:40px;
+				width:200px;
+				float:right;
+				font-size:12px;
+			}
+			a {color:black;font-size:30px;}
+		</style>
+<title>Title page</title>
+
+</head>
+
+<body>
+	<div id="p" style="opacity:0.9;background-color:#aabbcc;width:100%;height:40px;">
+		<a onclick="showLoved();return false;" href="">
+			Отобранные	
+		</a>
+		&nbsp;&nbsp;
+		<a onclick="showtelAvoid();return false;" href="">
+			Avoid phones	
+		</a>
+		&nbsp;&nbsp;
+		<a onclick="showtelHash();return false;" href="">
+			Avoid text	
+		</a>
+		&nbsp;&nbsp;
+		<a onclick="showRefreshed();return false;" href="">
+			Fresh <sup id="cn" style="font-size:11px;"></sup>
+		</a>
+		&nbsp;&nbsp;
+		<a onclick="refrshTts();return false;" href="" id="rf">
+			Refresh
+		</a>
+		&nbsp;&nbsp;
+		<span id=tags 
+			class="tags"
+			onmouseover="this.style.height = '400px';this.style.position = 'fixed'; this.style.right=0;"
+			onmouseout="this.style.height = '100%';this.style.position = 'static';"
+		>
+		
+		</span>
+		
+	</div>
+	<div>
+		<br>
+	</div>
+	<div id="l">
+	</div>
+</body>
+
+<script src="h/c.js"></script>
+<script>
+
+
+</script>
+
+	
